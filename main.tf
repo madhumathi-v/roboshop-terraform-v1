@@ -2,11 +2,12 @@ resource "azurerm_network_interface" "frontend" {
   name                = "frontend-nic"
   location            = "Denmark East"
   resource_group_name = "Denmark_East"
-
+  
   ip_configuration {
     name                          = "frontend-nic"
     subnet_id                     = "/subscriptions/3c3ac820-a526-4fd5-841f-cbb2d7ffa483/resourceGroups/Denmark_East/providers/Microsoft.Network/virtualNetworks/image-vm-vnet/subnets/default"
     private_ip_address_allocation = "Dynamic"
+    public_ip_address_id          = azurerm_public_ip.frontend.id
   }
 }
 
