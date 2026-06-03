@@ -1,7 +1,7 @@
 resource "azurerm_network_interface" "frontend" {
   name                = "frontend-nic"
   location            = "Denmark East (Zone 1)"
-  resource_group_name = "Denmark East"
+  resource_group_name = "Denmark_East"
 
   ip_configuration {
     name                          = "frontend-nic"
