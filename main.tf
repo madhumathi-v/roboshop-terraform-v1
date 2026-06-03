@@ -7,7 +7,6 @@ resource "azurerm_network_interface" "frontend" {
     name                          = "frontend-nic"
     subnet_id                     = "/subscriptions/3c3ac820-a526-4fd5-841f-cbb2d7ffa483/resourceGroups/Denmark_East/providers/Microsoft.Network/virtualNetworks/image-vm-vnet/subnets/default"
     private_ip_address_allocation = "Dynamic"
-    public_ip_address_id          = azurerm_public_ip.frontend.id
   }
 }
 
@@ -42,6 +41,6 @@ resource "azurerm_dns_a_record" "frontend" {
   zone_name           = "yogidevops.online"
   resource_group_name = "Denmark_East"
   ttl                 = 30
-  records = [azurerm_public_ip.frontend.ip_address]
+  records = [azurerm_linux_virtual_machine.frontend.private_ip_address]
 
 }
