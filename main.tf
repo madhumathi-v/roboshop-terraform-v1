@@ -41,5 +41,6 @@ resource "azurerm_dns_a_record" "frontend" {
   zone_name           = "yogidevops.online"
   resource_group_name = "Denmark_East"
   ttl                 = 30
-  records             = [azurerm_network_interface.frontend.ip_address ]
+  records = [azurerm_public_ip.frontend.ip_address]
+
 }
