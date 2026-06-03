@@ -1,6 +1,6 @@
 resource "azurerm_network_interface" "frontend" {
   name                = "frontend-nic"
-  location            = "Denmark East (Zone 1)"
+  location            = "Denmark East"
   resource_group_name = "Denmark_East"
 
   ip_configuration {
@@ -13,7 +13,7 @@ resource "azurerm_network_interface" "frontend" {
 resource "azurerm_linux_virtual_machine" "frontend" {
   name                = "frontend"
   resource_group_name = "Denmark_East"
-  location            = "Denmark East (Zone 1)"
+  location            = "Denmark East"
   size                = "Standard D2s v3 (2 vcpus, 8 GiB memory)"
   network_interface_ids = [azurerm_network_interface.frontend.id ]
   
