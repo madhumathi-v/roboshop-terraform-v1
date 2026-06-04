@@ -29,7 +29,7 @@ resource "azurerm_linux_virtual_machine" "frontend" {
     size                = "Standard_D2s_v3"
   network_interface_ids = [azurerm_network_interface.frontend.id ]
   
-  source_image_id = "/subscriptions/3c3ac820-a526-4fd5-841f-cbb2d7ffa483/resourceGroups/Denmark_East/providers/Microsoft.Network/virtualNetworks/image-vm-vnet"
+  source_image_id = "/subscriptions/3c3ac820-a526-4fd5-841f-cbb2d7ffa483/resourceGroups/Denmark_East/providers/Microsoft.Compute/galleries/image_vm/images/image"
 
   os_disk {
     caching              = "ReadWrite"
