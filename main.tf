@@ -52,7 +52,7 @@ resource "azurerm_dns_a_record" "frontend" {
   zone_name           = "yogidevops.online"
   resource_group_name = "Denmark_East"
   ttl                 = 30
-  
+  target_resource_id = azurerm_public_ip.frontend.id
 
 
 }
